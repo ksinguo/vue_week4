@@ -47,16 +47,14 @@ const app = createApp({
                     window.location = 'login.html';
                 })
         },
-        // editProduct(product){
-        //     editModal.show();
-        //     this.tempProduct = product;
-        // },
         openModal(status, product) {
             editModal.show()
             if (status === 'create') {
                 //要新增產品所以要將tempProduct清空，不然會帶出前一次編輯所賦予的資料
                 this.isNew = true
-                this.tempProduct = {}
+                this.tempProduct = {
+                imagesUrl: []
+            }
                 //console.log(this.tempProduct)
             } else if (status === 'edit') {
                 this.isNew = false
